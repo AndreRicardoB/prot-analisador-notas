@@ -8,17 +8,19 @@ import os
 
 
 
-# Variáveis globais para armazenar os dados dos arquivos CSV
+# Variaveis globais para armazenar os dados dos arquivos CSV
 arquivo1 = None
 arquivo2 = None
 nova_variavel1 = None
 nova_variavel2 = None
 
+# funçao pra selecionar o pdf
 def selecionar_pdf():
     file_path = filedialog.askopenfilename(filetypes=[("PDF files", "*.pdf")])
     if file_path:
         converter_pdf_para_csv(file_path)
-
+        
+# funçao pra converter de pdf pra csv
 def converter_pdf_para_csv(pdf_path):
     tables = tabula.read_pdf(pdf_path, pages='all')
     
